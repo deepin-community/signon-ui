@@ -1,0 +1,492 @@
+signon-ui (0.17+16.04.20151125-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Diane Trout ]
+  * New upstream release.
+
+  [ Pino Toscano ]
+  * Bump the debhelper compatibility to 13:
+    - switch the debhelper-compat build dependency to 13
+    - stop passing --fail-missing to dh_install, as it is the default for
+      dh_missing now
+  * Switch Vcs-* fields to salsa.debian.org.
+  * Add the configuration for the CI on salsa.
+  * Add Rules-Requires-Root: no.
+  * Trim trailing whitespace.
+  * Use secure copyright file specification URI.
+  * Update watch file format version to 4.
+  * Bump Standards-Version to 4.5.1, no changes required.
+  * Stop removing signon-ui-unittest, as it is not installed.
+  * Use /usr/share/dpkg/architecture.mk to make sure that $DEB_HOST_MULTIARCH
+    is always defined.
+  * Remove unused build dependencies: gdb, libgl1-mesa-dev | libgl-dev,
+    libgles2-mesa-dev | libgles2-dev, libicu-dev, libqt5opengl5-dev,
+    libsqlite3-dev, libxext-dev, libxslt1-dev, and libqt5sensors5-dev.
+  * Drop old signon-ui breaks/replaces, older than Stretch.
+
+ -- Pino Toscano <pino@debian.org>  Sat, 16 Jan 2021 23:22:58 +0100
+
+signon-ui (0.17+15.10.20150810-2) unstable; urgency=medium
+
+  * Update copyright file with more dates
+  * Remove libgstreamer-plugins-base1.0-dev from Build-Depends
+    (Closes: #800536)
+
+ -- Diane Trout <diane@debian.org>  Thu, 15 Oct 2015 10:51:17 -0700
+
+signon-ui (0.17+15.10.20150810-1) unstable; urgency=medium
+
+  * Prepare initial Debian release.
+  * Change maintainer to Debian qt-kde team, add myself as uploader
+  * Use QT_SELECT=qt5 in rules instead of qt5-default in build-dep
+  * Remove ubuntu-specific version number from qtbase5-dev
+  * Disable qtlocation5-dev from build-dep as Debian doesn't have it.
+  * Add xauth to build-dep needed for tests.
+  * Add myself to debian/* debian/copyright
+  * Remove signon-ui transitional package as we have never been released
+    to Debian.
+  * Remove Breaks/Replaces from signon-ui-service as we have never been
+    released to Debian
+  * Add watch file
+  * Add LGPL-2.1-QTexception-1.1 text to debian/copyright
+
+ -- Diane Trout <diane@debian.org>  Mon, 14 Sep 2015 22:06:53 -0700
+
+signon-ui (0.17+15.04.20150410-0ubuntu1) vivid; urgency=medium
+
+  [ Iain Lane ]
+  * src/signon.pro: Add 'quick' to the list of Qt modules used; we use
+    QQuickView
+
+ -- CI Train Bot <ci-train-bot@canonical.com>  Fri, 10 Apr 2015 08:47:04 +0000
+
+signon-ui (0.17+14.10.20140916-0ubuntu1) utopic; urgency=low
+
+  [ Colin Watson ]
+  * Add versioned Breaks/Replaces on signon-ui to signon-ui-x11 to fix
+    upgrades from before 0.17. (LP: #1363352)
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 16 Sep 2014 19:07:08 +0000
+
+signon-ui (0.17+14.10.20140814-0ubuntu1) utopic; urgency=low
+
+  [ Ubuntu daily release ]
+  * New rebuild forced
+
+  [ Alberto Mardegan ]
+  * New release Add signon-ui-service, to fix co-installation with u-s-
+    s-o-a. Use Oxide instead of WebKit2 .
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 14 Aug 2014 10:23:08 +0000
+
+signon-ui (0.17+14.10.20140612-0ubuntu1) utopic; urgency=medium
+
+  [ Alberto Mardegan ]
+  * Use Oxide instead of WebKit2
+  * Add signon-ui-service, to fix co-installation with u-s-s-o-a
+
+  [ Ubuntu daily release ]
+  * New rebuild forced
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 12 Jun 2014 13:35:05 +0000
+
+signon-ui (0.16+14.10.20140530-0ubuntu1) utopic; urgency=low
+
+  [ Timo Jyrinki ]
+  * Depend on libqt5sensors5-dev instead of qtsensors5-dev. (LP:
+    #1317885) (LP: #1317885)
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 30 May 2014 17:38:39 +0000
+
+signon-ui (0.16+14.04.20140304.is.0.15+14.04.20140313-0ubuntu2) utopic; urgency=medium
+
+  * debian/control: remove arch constraints in gl/gles build-deps, not needed
+    as it follows what Qt uses
+
+ -- Ricardo Salveti de Araujo <ricardo.salveti@canonical.com>  Tue, 29 Apr 2014 10:57:43 -0700
+
+signon-ui (0.16+14.04.20140304.is.0.15+14.04.20140313-0ubuntu1) trusty; urgency=low
+
+  * New rebuild forced
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 13 Mar 2014 15:22:16 +0000
+
+signon-ui (0.16+14.04.20140304.is.0.15+14.04.20131024.2-0ubuntu1) trusty; urgency=medium
+
+  * Reverting as desktop image isn't installable (main/universe
+    mismatch) and causing all signon-ui tests on Touch failing
+
+ -- Didier Roche <didrocks@ubuntu.com>  Wed, 05 Mar 2014 12:19:29 +0100
+
+signon-ui (0.16+14.04.20140304-0ubuntu1) trusty; urgency=medium
+
+  [ Alberto Mardegan ]
+  * Tag version 0.16.
+  * Add an experimental method to get the WebView cookies This is
+    intended to be used by the webapps container, in the attempt to
+    reduce the number of web logins required to the user.
+  * Disable failing test on QtDBus Q_ASSERT See https://bugreports.qt-
+    project.org/browse/QTBUG-36475 . (LP: #1271052)
+
+  [ Alexandre Abreu ]
+  * Update UA overrides from the most recent ones .
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 04 Mar 2014 15:04:01 +0000
+
+signon-ui (0.15+14.04.20131024.2-0ubuntu1) trusty; urgency=low
+
+  [ Ken VanDine ]
+  * Don't limit arch to a fixed set (LP: #1239743) . (LP: #1239743)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 119
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 24 Oct 2013 20:30:36 +0000
+
+signon-ui (0.15+13.10.20131016.2-0ubuntu1) saucy; urgency=low
+
+  [ Alberto Mardegan ]
+  * Do not anchor to the osk item (OnScreenKeyboard), as it's not a
+    sibling. . (LP: #1238485)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 117
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 16 Oct 2013 14:15:21 +0000
+
+signon-ui (0.15+13.10.20131011-0ubuntu1) saucy; urgency=low
+
+  [ Ken VanDine ]
+  * Use a MainView and pull in the UserAgent logic used in the Browser
+    component. Using the correct useragent fixes things like facebook
+    suggesting users should install the facebook app for iphone (LP:
+    #1235259). (LP: #1235259)
+  * Allow overriding the QML files used by placing them in
+    /usr/share/signon-ui/qml If there is a webview.qml file in that
+    directory, load it instead of using the one built into the
+    resources. This is useful for debugging QML only changes on the
+    device without needing to rebuild and install signon-ui. It is
+    important to note, when overriding them you need to copy include the
+    .qml and .js files into that directory. .
+
+  [ Iain Lane ]
+  * Allow LIBDIR and LIBEXECDIR to be overridden; install in multiarch
+    path; set LIBEXECDIR=LIBDIR .
+
+  [ Alberto Mardegan ]
+  * Bump build dependency for XEmbed support .
+  * Allow the request to be cancelled from the UI. Clients can provide a
+    QML component to be used in order to create the authentication page,
+    and this gives them a way to add a cancel button there. (LP:
+    #1231691)
+  * Let the client override the Page component. . (LP: #1231691)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 115
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 11 Oct 2013 04:33:07 +0000
+
+signon-ui (0.15+13.10.20131003.1-0ubuntu1) saucy; urgency=low
+
+  [ Alberto Mardegan ]
+  * Add missing import line The lack of this line was causing the
+    "units.gu()" function to be undefined, and therefore the form factor
+    was undefined as well, and consequently also the user-agent. . (LP:
+    #1217792)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 108
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 03 Oct 2013 16:36:31 +0000
+
+signon-ui (0.15daily13.06.25-0ubuntu1) saucy; urgency=low
+
+  [ Alberto Mardegan ]
+  * Show a warning message when authenticating with plain
+    HTTP. (LP: #1180297).
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 106
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 25 Jun 2013 04:31:06 +0000
+
+signon-ui (0.15daily13.06.12-0ubuntu1) saucy; urgency=low
+
+  [ Alberto Mardegan ]
+  * Don't block the "about:blank" URL.
+  * Don't empty the username field when the login form is re-presented.
+  * Do not hardcode the prefix in D-Bus service files.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 104
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 12 Jun 2013 04:31:57 +0000
+
+signon-ui (0.14daily13.06.05.1-0ubuntu1) saucy; urgency=low
+
+  [ phablet ]
+  * Add some more logic for the webview, based on Ubuntu.Browser for better
+    support on phablet
+
+  [ Ken VanDine ]
+  * Optionally use WebKit2 in Qt5 Add a configuration option ("qmake
+    CONFIG+=no-widgets") to disable using the QtWidgets based QWebView
+    and use QtQuick's WebView, which is based on WebKit2. Another
+    configuration option ("CONFIG+=force-foreign-qwindow") can be used
+    to enable window embedding/reparenting with Qt5, which otherwise
+    would only be enabled with Qt 5.1 or later. Note that the "no-
+    widgets" option is not activated in debian/rules; that bit should go
+    into a separate branch. The WebView implementation is mostly based
+    on Ken Vandine's "phablet-rebased" branch; the big difference here
+    is that the WebView is opened in a separate process, which is
+    spawned by signon-ui with a hacked $HOME variable which will force
+    WebKit2 to store all its data (cookies and form completions) into a
+    different location depending on the identity being authenticated.
+    The process separation is needed in order not to share the same
+    WebKit's WebProcess among the WebViews, which would defeat the trick
+    of changing $HOME.
+
+  [ Alberto Mardegan ]
+  * Use bzr-export to implement the "make dist" command This includes
+    the po/Makefile file, which was previously being excluded by
+    mistake. . (LP: #1162296)
+  * Wait 3 seconds before reporting a page load failure When logging in
+    to Google with an Ubuntu SSO account, the browser is briefly
+    redirected to a page which fails to load; however, the
+    authentication then continues successfully. In order not to stop the
+    authentication process, wait three seconds before terminating the
+    authentication with an error, and abort the timer if another URL is
+    queued. . (LP: #1171853)
+  * Cancel fail timer when a load is in progress If a page is loading,
+    don't make the request fail. . (LP: #1171853)
+  * Implement removeIdentityData signond will call this method when an
+    identity is removed or being signed out. .
+  * Optionally use WebKit2 in Qt5 Add a configuration option ("qmake
+    CONFIG+=no-widgets") to disable using the QtWidgets based QWebView
+    and use QtQuick's WebView, which is based on WebKit2. Another
+    configuration option ("CONFIG+=force-foreign-qwindow") can be used
+    to enable window embedding/reparenting with Qt5, which otherwise
+    would only be enabled with Qt 5.1 or later. Note that the "no-
+    widgets" option is not activated in debian/rules; that bit should go
+    into a separate branch. The WebView implementation is mostly based
+    on Ken Vandine's "phablet-rebased" branch; the big difference here
+    is that the WebView is opened in a separate process, which is
+    spawned by signon-ui with a hacked $HOME variable which will force
+    WebKit2 to store all its data (cookies and form completions) into a
+    different location depending on the identity being authenticated.
+    The process separation is needed in order not to share the same
+    WebKit's WebProcess among the WebViews, which would defeat the trick
+    of changing $HOME.
+  * Runtime detection of browser handler Even if the "use-webkit2"
+    option is given at build time, allow using the qtwebkit1 interface
+    on xcb. This allows us to use the same signon-ui binary for desktop
+    and phone form factors. .
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 100
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 05 Jun 2013 18:49:08 +0000
+
+signon-ui (0.14daily13.05.14ubuntu.unity.next-0ubuntu1) raring; urgency=low
+
+  [ Alberto Mardegan ]
+  * Add a flag to disable SSL errors (to be used for integration tests).
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 97 (ubuntu-unity/next)
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 14 May 2013 13:50:47 +0000
+
+signon-ui (0.14daily13.05.02.1ubuntu.unity.next-0ubuntu1) raring; urgency=low
+
+  * Automatic snapshot from revision 95 (ubuntu-unity/next)
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 02 May 2013 20:48:13 +0000
+
+signon-ui (0.14daily13.05.02ubuntu.unity.next-0ubuntu1) raring; urgency=low
+
+  * Automatic snapshot from revision 92 (ubuntu-unity/next)
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 02 May 2013 07:36:29 +0000
+
+signon-ui (0.14daily13.05.01.1ubuntu.unity.next-0ubuntu2) UNRELEASED; urgency=low
+
+  * debian/control
+    - don't build for powerpc, qtsensors5-dev isn't available
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Thu, 02 May 2013 01:16:37 -0700
+
+signon-ui (0.14daily13.05.01.1ubuntu.unity.next-0ubuntu1) raring; urgency=low
+
+  [ Alberto Mardegan ]
+  * Fix a crash potentially happening when the XEmbed container reused the
+    same X window ID from a previous one.
+
+  [ Ken VanDine ]
+  * Automatic snapshot from revision 84 (bootstrap)
+
+  [ Alberto Mardegan ]
+  * po/Makefile is missing from released tarballs (LP: #1162296)
+  * Cannot log in to Google apps domain + Ubuntu SSO (LP: #1171853)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 90 (ubuntu-unity/next)
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 01 May 2013 07:53:33 +0000
+
+signon-ui (0.14-0ubuntu2) saucy; urgency=low
+
+  [ Alberto Mardegan ]
+  * Fix a crash potentially happening when the XEmbed container reused the
+    same X window ID from a previous one. (LP: #1158969)
+  * Fixed Cannot log in to Google apps domain + Ubuntu SSO (LP: #1171853)
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Wed, 29 May 2013 10:37:43 -0400
+
+signon-ui (0.14-0ubuntu1) raring; urgency=low
+
+  * New upstream release.
+    - Fix page scrolling for some websites (LP: #1158173)
+    - Prevent a double deletion of the browser dialog (LP: #1111507)
+    - Tests: don't use any libnotify methods.
+
+ -- Alberto Mardegan <alberto.mardegan@canonical.com>  Thu, 21 Mar 2013 14:46:48 +0200
+
+signon-ui (0.13bzr13.03.19-0ubuntu1) raring; urgency=low
+
+  * Do not quit if some accounts are failing (LP: #1135038)
+  * Default daemonTimeout to 30 (LP: #1112680)
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Tue, 19 Mar 2013 11:17:02 -0400
+
+signon-ui (0.12bzr13.01.09-0ubuntu1) raring; urgency=low
+
+  * Inline packaging metadata.
+  * Fix typo in proxy detection algorithm (LP: #1095254) [mardy]
+  * Tests: add functional test for the reauthenticator [mardy]
+
+ -- Robert Bruce Park <robert.park@canonical.com>  Wed, 09 Jan 2013 14:55:15 -0800
+
+signon-ui (0.11-0ubuntu1) quantal-proposed; urgency=low
+
+  * New upstream release.
+    - Do not instantiate invalid QDBusMessages (LP: #1040580)
+    - Do not allocate the proxy factory on the
+      stack (LP: #1053444) (LP: #1053454)
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Tue, 25 Sep 2012 16:47:07 -0400
+
+signon-ui (0.10-0ubuntu1) quantal; urgency=low
+
+  * New upstream release.
+    - Fixed proxy support (LP: #1048590)
+    - Don't emit an OSD notification when accounts fail to
+      authenticate (LP: #1049140)
+  * debian/control
+    - build depend on libproxy-dev
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Wed, 19 Sep 2012 15:06:38 -0400
+
+signon-ui (0.9-0ubuntu1) quantal; urgency=low
+
+  * New upstream release.
+    - Early terminate successful requests with no UI (LP: #1049207)
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Wed, 12 Sep 2012 09:36:58 -0400
+
+signon-ui (0.8-0ubuntu1) quantal; urgency=low
+
+  * New upstream release.
+    - Successfully terminate the browser request as soon as we are requested
+      to load the final URL.  This fixes spawning a bunch of instances of
+      external browser instances (LP: #1048177) (LP: #1047588)
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Mon, 10 Sep 2012 09:08:27 -0400
+
+signon-ui (0.7-0ubuntu1) quantal; urgency=low
+
+  * New upstream release.
+    - protect webkit from untrusted content, only allow https (LP: #1039084)
+  * -debian/patches/unit_tests_only.patch, merged upstream
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Fri, 07 Sep 2012 09:33:56 -0400
+
+signon-ui (0.6-0ubuntu1) quantal; urgency=low
+
+  * New upstream release.
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Fri, 17 Aug 2012 16:53:56 -0400
+
+signon-ui (0.5-0ubuntu1) quantal; urgency=low
+
+  * New upstream release
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Thu, 02 Aug 2012 14:40:56 -0400
+
+signon-ui (0.4+bzr47-0quantal1) quantal; urgency=low
+
+  * New snapshot rev 47
+  * common-project-config.pri
+    - fixed FTBFS by including X11 in pkgconfg
+  * tests/test.pro
+    - Only run unit tests
+  * debian/control
+    - added build depends for libxext-dev, gdb, xvfb, dbus-test-runner
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Wed, 01 Aug 2012 17:03:13 -0400
+
+signon-ui (0.4+bzr46-0quantal1) quantal; urgency=low
+
+  * rebuild for quantal
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Mon, 16 Jul 2012 09:59:56 -0400
+
+signon-ui (0.4+bzr46-0precise2) precise; urgency=low
+
+  * no change rebuild
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Fri, 15 Jun 2012 16:53:26 -0400
+
+signon-ui (0.4+bzr46-0precise1) precise; urgency=low
+
+  * new snapshot tag 0.4+bzr46
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Fri, 01 Jun 2012 14:43:03 -0400
+
+signon-ui (0.3+bzr43-0precise1) precise; urgency=low
+
+  * new snapshot tag 0.3+bzr43
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Wed, 04 Apr 2012 15:03:37 -0400
+
+signon-ui (0.3+bzr34-0precise2) precise; urgency=low
+
+  * rebased on trunk
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Fri, 30 Mar 2012 12:01:03 -0400
+
+signon-ui (0.3+bzr34-0precise1) precise; urgency=low
+
+  * new snapshot tag 0.3+bzr40
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Thu, 29 Mar 2012 14:34:00 -0400
+
+signon-ui (0.2+bzr37-0precise1) precise; urgency=low
+
+  * New snapshot r37
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Mon, 19 Mar 2012 12:27:12 -0400
+
+signon-ui (0.2-0precise2) precise; urgency=low
+
+  * debian/control
+    - added build depends on libx11-dev
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Thu, 05 Jan 2012 12:55:17 -0500
+
+signon-ui (0.2-0precise1) precise; urgency=low
+
+  * Initial release
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Thu, 05 Jan 2012 10:32:27 -0500
